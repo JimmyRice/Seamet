@@ -16,7 +16,13 @@ struct ArticleListView: View {
             if !isLoading {
                 VStack {
                     if !articles.isEmpty {
-                        ArticleList(articles: articles)
+                        List(articles, id: \.self) {article in
+                            NavigationLink {
+                                Text("Working in progress...")
+                            } label: {
+                                ArticleListCell(title: article.title, dateTime: DatetimeUtil.ISO8601ToString(dateTime: article.createdDate))
+                            }
+                        }
                     } else {
                         Text("文章似乎为空哦...找点别的看吧")
                     }
