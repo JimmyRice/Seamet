@@ -7,19 +7,17 @@
 
 import Foundation
 
-enum DatetimeUtilError: Error {
-    case convertToDateError
-}
-
 struct DatetimeUtil {
-    static func ISO8601ToString(dateTime: String) throws -> String {
+    static func ISO8601ToString(dateTime: String) -> String {
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         
         guard let updatedDate = dateFormatter.date(from: dateTime) else {
-            throw DatetimeUtilError.convertToDateError
+            return "Invlid date"
         }
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         let iso8601InString = dateFormatter.string(from: updatedDate)
         

@@ -20,6 +20,7 @@
 		BFAD3EF42827B5820045007A /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD3EF32827B5820045007A /* HttpClient.swift */; };
 		BFB3AA79282D618600638810 /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3AA78282D618600638810 /* ArticleListCell.swift */; };
 		BFB3AA7B282D66C300638810 /* DatetimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3AA7A282D66C300638810 /* DatetimeUtil.swift */; };
+		BFB3AA7D282D68DD00638810 /* ArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3AA7C282D68DD00638810 /* ArticleList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		BFAD3EF32827B5820045007A /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		BFB3AA78282D618600638810 /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
 		BFB3AA7A282D66C300638810 /* DatetimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatetimeUtil.swift; sourceTree = "<group>"; };
+		BFB3AA7C282D68DD00638810 /* ArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB3AA78282D618600638810 /* ArticleListCell.swift */,
+				BFB3AA7C282D68DD00638810 /* ArticleList.swift */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				BFAD3EF12827B5580045007A /* ArticleListView.swift in Sources */,
 				BFB3AA79282D618600638810 /* ArticleListCell.swift in Sources */,
 				BF1EDB4F282806DA0065ED17 /* ArticleProvider.swift in Sources */,
+				BFB3AA7D282D68DD00638810 /* ArticleList.swift in Sources */,
 				BF1EDB55282808230065ED17 /* Config.swift in Sources */,
 				BFAD3EF42827B5820045007A /* HttpClient.swift in Sources */,
 				BFB3AA7B282D66C300638810 /* DatetimeUtil.swift in Sources */,
