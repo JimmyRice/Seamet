@@ -17,7 +17,7 @@ struct ContentView: View {
     
     func onAppear() {
         Task {
-            try! await ArticleProvider().getArticles()
+            try! await ArticleProvider.getArticles()
         }
     }
 }

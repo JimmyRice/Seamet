@@ -12,9 +12,9 @@ enum ArticleProviderError: Error {
 }
 
 struct ArticleProvider {
-    private let httpClient = HttpClient(baseUrl: Config.BaseUrl)
+    private static let httpClient = HttpClient(baseUrl: Config.BaseUrl)
     
-    func getArticles() async throws -> [Article] {
+    static func getArticles() async throws -> [Article] {
         do {
             let response: Entry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article")
             
