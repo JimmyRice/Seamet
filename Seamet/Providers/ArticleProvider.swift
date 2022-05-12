@@ -16,7 +16,7 @@ struct ArticleProvider {
     
     static func getArticles() async throws -> [Article] {
         do {
-            let response: Entry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article")
+            let response: Entry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article?sort=-id")
             
             return response.data
         } catch {

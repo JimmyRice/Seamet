@@ -9,15 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Placeholder")
-            .onAppear {
-                onAppear()
-            }
-    }
-    
-    func onAppear() {
-        Task {
-            try! await ArticleProvider.getArticles()
+        TabView {
+            ArticleListView()
+                .tabItem {
+                    Label("主页", systemImage: "house")
+                }
         }
     }
 }
