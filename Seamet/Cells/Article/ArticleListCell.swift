@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct ArticleListCell: View {
+    var title: String
+    var dateTime: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(title)
+                .fontWeight(.bold)
+            
+            Spacer()
+            
+            Text(dateTime)
+                .foregroundColor(.gray)
+        }
     }
 }
 
 struct ArticleListCell_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleListCell()
+        ArticleListCell(title: "Title", dateTime: "2022/03/10")
     }
 }
