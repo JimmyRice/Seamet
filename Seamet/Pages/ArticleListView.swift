@@ -8,8 +8,38 @@
 import SwiftUI
 
 struct ArticleListView: View {
+    @State var articles: [Article] = []
+    @State private var isLoading: Bool = true
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            if !isLoading {
+                VStack {
+                    if !articles.isEmpty {
+                        ArticleList(articles: articles)
+                    } else {
+                        Text("文章似乎为空哦...找点别的看吧")
+                    }
+                }
+                .navigationTitle("Seamain 的小窝")
+            } else {
+                ProgressView("加载中...")
+                    .onAppear {
+                        onAppear()
+                    }
+            }
+        }
+    }
+    
+    func onAppear() {
+        Task {
+            guard let articles = try? await ArticleProvider.getArticles() else {
+                fatalError()
+            }
+            
+            self.articles = articles
+            self.isLoading = false
+        }
     }
 }
 
@@ -19,6 +49,6 @@ struct ArticleListView_Previews: PreviewProvider {
         Article(id: 3, title: "3", createdDate: "2022-04-21T12:16:00", tags: ["Only for test"], content: "", author: 1, slug: "", category: 1)]
     
     static var previews: some View {
-        ArticleListView()
+        ArticleListView(articles: articles)
     }
 }
