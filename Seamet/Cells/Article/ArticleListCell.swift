@@ -26,6 +26,6 @@ struct ArticleListCell: View {
 
 struct ArticleListCell_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleListCell(title: "Title", dateTime: "2022/03/10")
+        ArticleListCell(title: "Title", dateTime: DatetimeUtil.ISO8601ToString(dateTime: "2022-03-20T11:46:00"))
     }
 }
