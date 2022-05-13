@@ -19,7 +19,7 @@ struct ArticleDetailHeader: View {
                 .fontWeight(.heavy)
             
             HStack {
-                Text(articleCreatedDate)
+                Text(DatetimeUtil.ISO8601ToString(dateTime: articleCreatedDate))
                     .fontWeight(.medium)
                     .foregroundColor(.gray)
                 Text("|")
