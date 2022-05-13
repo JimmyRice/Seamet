@@ -18,7 +18,7 @@ struct ArticleListView: View {
                     if !articles.isEmpty {
                         List(articles, id: \.self) {article in
                             NavigationLink {
-                                Text("Working in progress...")
+                                ArticleDetailView(articleId: article.id)
                             } label: {
                                 ArticleListCell(title: article.title, dateTime: DatetimeUtil.ISO8601ToString(dateTime: article.createdDate))
                             }
