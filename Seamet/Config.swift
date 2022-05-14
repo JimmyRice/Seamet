@@ -8,5 +8,5 @@
 import Foundation
 
 struct Config {
-    static let BaseUrl: String = "https://t3tmqp0w.directus.app"
+    static let baseUrl: String = "https://t3tmqp0w.directus.app"
 }
