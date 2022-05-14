@@ -27,7 +27,7 @@ struct ArticleListView: View {
                         Text("文章似乎为空哦...找点别的看吧")
                     }
                 }
-                .navigationTitle("Seamain 的小窝")
+                .navigationTitle(Config.articleListViewTitle)
             } else {
                 ProgressView("加载中...")
                     .onAppear {

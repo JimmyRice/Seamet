@@ -12,7 +12,7 @@ struct ContentView: View {
         TabView {
             ArticleListView()
                 .tabItem {
-                    Label("主页", systemImage: "house")
+                    Label("文章", systemImage: "newspaper")
                 }
         }
     }
