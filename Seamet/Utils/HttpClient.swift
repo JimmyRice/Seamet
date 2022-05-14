@@ -15,6 +15,7 @@ enum HttpClientError: Error {
     case dataConnotConvertToJson
     case stringConvertToDataError
     case dataConvertToJsonError
+    case requestNotOk
 }
 
 struct HttpClient {
@@ -41,7 +42,12 @@ struct HttpClient {
         }
         
         do {
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                throw HttpClientError.requestNotOk
+            }
+            
             guard let dataInString = String(data: data, encoding: .utf8) else {
                 throw HttpClientError.dataConnotConvertToString
             }
