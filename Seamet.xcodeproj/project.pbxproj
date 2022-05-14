@@ -150,19 +150,9 @@
 		BF575EBC2827A2DA00305612 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				BFA8012F282EB02800E9A178 /* Article Detail */,
 				BFB3AA77282D616500638810 /* Article */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		BFA8012F282EB02800E9A178 /* Article Detail */ = {
-			isa = PBXGroup;
-			children = (
-				BFA80130282EB04C00E9A178 /* ArticleDetailHeader.swift */,
-				BFA80134282EB58700E9A178 /* ArticleDetailBody.swift */,
-			);
-			path = "Article Detail";
 			sourceTree = "<group>";
 		};
 		BFA8013D282EB89A00E9A178 /* SeametTests */ = {
@@ -186,6 +176,8 @@
 		BFB3AA77282D616500638810 /* Article */ = {
 			isa = PBXGroup;
 			children = (
+				BFA80130282EB04C00E9A178 /* ArticleDetailHeader.swift */,
+				BFA80134282EB58700E9A178 /* ArticleDetailBody.swift */,
 				BFB3AA78282D618600638810 /* ArticleListCell.swift */,
 			);
 			path = Article;
