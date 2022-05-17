@@ -6,30 +6,49 @@
 //
 
 import XCTest
+@testable import Seamet
 
-class SeametTests: XCTestCase {
-
+class ProviderTests: XCTestCase {
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    
+    func testArticleProvider() async throws {
+        do {
+            let articles = try await ArticleProvider.getArticles()
+            
+            XCTAssertTrue(articles is [Article])
+            XCTAssertGreaterThan(articles.count, 1)
+        } catch let error {
+            print(error)
         }
     }
+}
 
+class UtilTest: XCTestCase {
+    override func setUpWithError() throws {
+        
+    }
+    
+    override func tearDownWithError() throws {
+        
+    }
+    
+    func testI8601ToString() throws {
+        let dateInString = "2022-03-20T11:46:00"
+        let convertString = DatetimeUtil.ISO8601ToString(dateTime: dateInString)
+        
+        XCTAssertEqual(convertString, "2022-03-20")
+    }
+    
+    func testArticleTagsConvert() throws {
+        let tags = ["Arknights", "Games"]
+        let tagsInString = ArticleTagsUtil.articleTagsToString(tags: tags)
+        
+        XCTAssertEqual(tagsInString, "Arknights / Games")
+    }
 }
