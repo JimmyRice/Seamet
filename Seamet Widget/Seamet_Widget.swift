@@ -44,8 +44,11 @@ struct Seamet_WidgetEntryView : View {
     var entry: Provider.Entry
     
     var body: some View {
-        Text(entry.date, style: .time)
-            .fontWeight(.bold)
+        VStack {
+            Text("Hello Seamet")
+                .fontWeight(.bold)
+                .font(.title)
+        }
     }
 }
 
@@ -57,8 +60,8 @@ struct Seamet_Widget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             Seamet_WidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Seamet")
-        .description("This is a widget shows recent article")
+        .configurationDisplayName("Recent Article")
+        .description("Shows recent article")
     }
 }
 

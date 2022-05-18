@@ -37,6 +37,8 @@
 		BFEDA90828354E7D00E678A0 /* ArticleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB4E282806DA0065ED17 /* ArticleProvider.swift */; };
 		BFEDA90A28354E7D00E678A0 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB52282807300065ED17 /* Article.swift */; };
 		BFEDA90B28354E7D00E678A0 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD3EF32827B5820045007A /* HttpClient.swift */; };
+		BFEDA90C28354EEC00E678A0 /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB50282806FB0065ED17 /* DataEntry.swift */; };
+		BFEDA91028354F5800E678A0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB54282808230065ED17 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -424,10 +426,12 @@
 			files = (
 				BFEDA90A28354E7D00E678A0 /* Article.swift in Sources */,
 				BFEDA90B28354E7D00E678A0 /* HttpClient.swift in Sources */,
+				BFEDA91028354F5800E678A0 /* Config.swift in Sources */,
 				BFEDA90728354E7D00E678A0 /* DatetimeUtil.swift in Sources */,
 				BFEDA8F82835452800E678A0 /* Seamet_Widget.swift in Sources */,
 				BFEDA90828354E7D00E678A0 /* ArticleProvider.swift in Sources */,
 				BFEDA8FD2835452A00E678A0 /* Seamet_Widget.intentdefinition in Sources */,
+				BFEDA90C28354EEC00E678A0 /* DataEntry.swift in Sources */,
 				BFEDA90628354E7D00E678A0 /* ArticleTagsUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
