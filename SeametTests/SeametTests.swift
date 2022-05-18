@@ -21,10 +21,22 @@ class ProviderTests: XCTestCase {
         do {
             let articles = try await ArticleProvider.getArticles()
             
-            XCTAssertTrue(articles is [Article])
             XCTAssertGreaterThan(articles.count, 1)
         } catch let error {
             print(error)
+        }
+    }
+    
+    func testRecentArticleProvider() async throws {
+        do {
+            let recentArticle = try await ArticleProvider.getRecentArticle()
+                        
+            XCTAssertNotNil(recentArticle)
+            XCTAssertNotNil(recentArticle.title)
+        } catch let error {
+            print(error)
+            
+            throw error
         }
     }
 }
