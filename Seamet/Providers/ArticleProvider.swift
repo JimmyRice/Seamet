@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum ArticleProviderError: Error {
-    case responseToStructError
-}
-
 struct ArticleProvider {
     private static let httpClient = HttpClient(baseUrl: Config.baseUrl)
     
@@ -19,8 +15,20 @@ struct ArticleProvider {
             let response: Entry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article?sort=-id&fields=id,title,createdDate")
             
             return response.data
-        } catch {
-            throw ArticleProviderError.responseToStructError
+        } catch let error {
+            throw error
+        }
+    }
+    
+    static func getRecentArticle() async throws -> Article {
+        do {
+            let response: Entry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article?sort=-id&fields=id,title,createdDate&limit=1")
+            
+            return response.data[0]
+        } catch let error {
+            print(error)
+            
+            throw error
         }
     }
     
@@ -29,8 +37,8 @@ struct ArticleProvider {
             let response: Entry<Article> = try await httpClient.getJson(addtionalUrl: "/items/article/\(id)")
             
             return response.data
-        } catch {
-            throw ArticleProviderError.responseToStructError
+        } catch let error {
+            throw error
         }
     }
 }
