@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Entry<TData: Codable>: Codable {
+struct DataEntry<TData: Codable>: Codable {
     let data: TData
 }

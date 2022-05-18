@@ -42,7 +42,7 @@ struct SimpleEntry: TimelineEntry {
 
 struct Seamet_WidgetEntryView : View {
     var entry: Provider.Entry
-
+    
     var body: some View {
         Text(entry.date, style: .time)
             .fontWeight(.bold)

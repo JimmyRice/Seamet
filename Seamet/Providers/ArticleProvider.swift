@@ -12,7 +12,7 @@ struct ArticleProvider {
     
     static func getArticles() async throws -> [Article] {
         do {
-            let response: Entry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article?sort=-id&fields=id,title,createdDate")
+            let response: DataEntry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article?sort=-id&fields=id,title,createdDate")
             
             return response.data
         } catch let error {
@@ -22,7 +22,7 @@ struct ArticleProvider {
     
     static func getRecentArticle() async throws -> Article {
         do {
-            let response: Entry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article?sort=-id&fields=id,title,createdDate&limit=1")
+            let response: DataEntry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article?sort=-id&fields=id,title,createdDate&limit=1")
             
             return response.data[0]
         } catch let error {
@@ -34,7 +34,7 @@ struct ArticleProvider {
     
     static func getArticle(id: Int) async throws -> Article {
         do {
-            let response: Entry<Article> = try await httpClient.getJson(addtionalUrl: "/items/article/\(id)")
+            let response: DataEntry<Article> = try await httpClient.getJson(addtionalUrl: "/items/article/\(id)")
             
             return response.data
         } catch let error {
