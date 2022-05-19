@@ -5,17 +5,24 @@
 //  Created by Jimmy on 5/8/22.
 //
 
+/**
+ This HttpClient will be considered for refactoring soon and other HTTP methods will be added after the refactoring
+ 
+ Until the refactoring is complete: DO NOT TOUCH
+ */
+
 import Foundation
 
 enum HttpClientError: Error {
     case invalidUrl
     case createHttpRequestError
-    case dataCannotConvertToString
+    case dataToStringError
     case internetOrRequestError
     case dataConnotConvertToJson
-    case stringConvertToDataError
-    case dataConvertToJsonError
-    case requestNotOk
+    case stringToDataError
+    case dataDecodeError
+    case invlidServerResponse(errorStatusCode: Int)
+    case invlidResponseGuaranteed
 }
 
 struct HttpClient {
@@ -41,37 +48,80 @@ struct HttpClient {
             }
         }
         
-        do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-            
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                throw HttpClientError.requestNotOk
-            }
-            
-            guard let dataInString = String(data: data, encoding: .utf8) else {
-                throw HttpClientError.dataCannotConvertToString
-            }
-            
-            return dataInString
-        } catch {
-            throw HttpClientError.internetOrRequestError
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let response = response as? HTTPURLResponse else {
+            throw HttpClientError.invlidResponseGuaranteed
         }
+        
+        if response.statusCode != 200 {
+            throw HttpClientError.invlidServerResponse(errorStatusCode: response.statusCode)
+        }
+        
+        guard let dataInString = String(data: data, encoding: .utf8) else {
+            throw HttpClientError.dataToStringError
+        }
+        
+        return dataInString
     }
     
     func getJson<TJson: Codable>(addtionalUrl: String = "/", headers: Dictionary<String, String>? = [:]) async throws -> TJson {
-        do {
-            let dataInString = try await getString(addtionalUrl: addtionalUrl, headers: headers)
-            guard let data = dataInString.data(using: .utf8) else {
-                throw HttpClientError.stringConvertToDataError
-            }
-            
-            guard let Json = try? JSONDecoder().decode(TJson.self, from: data) else {
-                throw HttpClientError.dataConvertToJsonError
-            }
-            
-            return Json;
-        } catch {
-            throw HttpClientError.internetOrRequestError
+        let dataInString = try await getString(addtionalUrl: addtionalUrl, headers: headers)
+        guard let data = dataInString.data(using: .utf8) else {
+            throw HttpClientError.stringToDataError
         }
+        
+        guard let json = try? JSONDecoder().decode(TJson.self, from: data) else {
+            throw HttpClientError.dataDecodeError
+        }
+        
+        return json;
+    }
+    
+    func postGetString(addtionalUrl: String = "/", headers: Dictionary<String, String>? = [:], dataToPost: Data) async throws -> String {
+        guard let url = URL(string: baseUrl + addtionalUrl) else {
+            throw HttpClientError.invalidUrl
+        }
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        request.httpBody = dataToPost
+        
+        if let headers = headers {
+            for (key, value) in headers {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let response = response as? HTTPURLResponse else {
+            throw HttpClientError.invlidResponseGuaranteed
+        }
+                    
+        if response.statusCode != 200 && response.statusCode != 201 {
+            throw HttpClientError.invlidServerResponse(errorStatusCode: response.statusCode)
+        }
+        
+        guard let dataInString = String(data: data, encoding: .utf8) else {
+            throw HttpClientError.dataToStringError
+        }
+        
+        return dataInString
+    }
+    
+    func postGetJson<TJson: Codable>(addtionalUrl: String = "/", headers: Dictionary<String, String>? = [:], dataToPost: Data) async throws -> TJson {
+        let dataInString = try await postGetString(addtionalUrl: addtionalUrl, headers: headers, dataToPost: dataToPost)
+        
+        guard let data = dataInString.data(using: .utf8) else {
+            throw HttpClientError.stringToDataError
+        }
+        
+        guard let json = try? JSONDecoder().decode(TJson.self, from: data) else {
+            throw HttpClientError.dataDecodeError
+        }
+        
+        return json;
     }
 }
