@@ -10,7 +10,7 @@ import Foundation
 enum HttpClientError: Error {
     case invalidUrl
     case createHttpRequestError
-    case dataConnotConvertToString
+    case dataCannotConvertToString
     case internetOrRequestError
     case dataConnotConvertToJson
     case stringConvertToDataError
@@ -49,7 +49,7 @@ struct HttpClient {
             }
             
             guard let dataInString = String(data: data, encoding: .utf8) else {
-                throw HttpClientError.dataConnotConvertToString
+                throw HttpClientError.dataCannotConvertToString
             }
             
             return dataInString
