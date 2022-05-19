@@ -65,7 +65,7 @@ class UtilTest: XCTestCase {
     }
 }
 
-class HttpClientTest: XCTestCase {
+class OldHttpClientTest: XCTestCase {
     struct HttpBin: Codable {
         let origin: String
         let url: String
@@ -76,7 +76,7 @@ class HttpClientTest: XCTestCase {
         let gender: String
     }
     
-    private let httpClient = HttpClient(baseUrl: "https://httpbin.org")
+    private let httpClient = OldHttpClient(baseUrl: "https://httpbin.org")
     
     func testGetString() async throws {
         do {

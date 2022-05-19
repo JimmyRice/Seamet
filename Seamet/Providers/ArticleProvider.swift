@@ -8,7 +8,7 @@
 import Foundation
 
 struct ArticleProvider {
-    private static let httpClient = HttpClient(baseUrl: Config.baseUrl)
+    private static let httpClient = OldHttpClient(baseUrl: Config.baseUrl)
     
     static func getArticles() async throws -> [Article] {
         do {
