@@ -27,7 +27,7 @@ struct HttpClient {
         self.url = url
     }
     
-    private func sendRequest(addtionalUrl: String?, method: String, headers: Dictionary<String, String>? = nil, body: Data? = nil) async throws -> Data {
+    private func sendRequest(addtionalUrl: String? = nil, method: String, headers: Dictionary<String, String>? = nil, body: Data? = nil) async throws -> Data {
         var url = self.url
         
         if let addtionalUrl = addtionalUrl {
@@ -63,11 +63,11 @@ struct HttpClient {
         return data
     }
     
-    func getString(addtionalUrl: String?, headers: Dictionary<String, String>? = nil) async throws -> String {
+    func getString(addtionalUrl: String? = nil, headers: Dictionary<String, String>? = nil) async throws -> String {
         guard let data = try? await sendRequest(addtionalUrl: addtionalUrl, method: "GET") else {
             throw HttpClientError.failedToFetchData
         }
-        
+                
         guard let dataInString = String(data: data, encoding: .utf8) else {
             throw HttpClientError.failedToConvertData
         }

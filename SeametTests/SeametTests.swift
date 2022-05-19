@@ -65,6 +65,39 @@ class UtilTest: XCTestCase {
     }
 }
 
+class HttpClientTest: XCTestCase {
+    private var httpClient: HttpClient!
+    
+    override func setUpWithError() throws {
+        guard let url = URL(string: Config.baseUrl) else {
+            return
+        }
+        
+        httpClient = HttpClient(url: url)
+    }
+    
+    override func tearDownWithError() throws {
+        httpClient = nil
+    }
+    
+    func testGetString() async throws {
+        let response = try await httpClient.getString(addtionalUrl: "/items/article")
+        
+        print(response)
+        
+        XCTAssertNotNil(response)
+    }
+    
+    func testGetJson() async throws {
+        let response: DataEntry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article")
+        
+        print(response.data)
+        
+        XCTAssertNotNil(response.data)
+        XCTAssertGreaterThan(response.data.count, 1)
+    }
+}
+
 class OldHttpClientTest: XCTestCase {
     struct HttpBin: Codable {
         let origin: String
