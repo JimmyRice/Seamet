@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF1AE33C28369EA600768917 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AE33B28369EA600768917 /* HttpClient.swift */; };
+		BF1AE33E2836A04F00768917 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AE33D2836A04F00768917 /* HttpClient.swift */; };
+		BF1AE3432836A6EB00768917 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AE3422836A6EB00768917 /* HttpStatusCode.swift */; };
 		BF1EDB4F282806DA0065ED17 /* ArticleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB4E282806DA0065ED17 /* ArticleProvider.swift */; };
 		BF1EDB51282806FB0065ED17 /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB50282806FB0065ED17 /* DataEntry.swift */; };
 		BF1EDB53282807300065ED17 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB52282807300065ED17 /* Article.swift */; };
@@ -74,7 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BF1AE33B28369EA600768917 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		BF1AE33D2836A04F00768917 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		BF1AE3422836A6EB00768917 /* HttpStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		BF1EDB4E282806DA0065ED17 /* ArticleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleProvider.swift; sourceTree = "<group>"; };
 		BF1EDB50282806FB0065ED17 /* DataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
 		BF1EDB52282807300065ED17 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF1AE3412836A6D900768917 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				BF1AE3422836A6EB00768917 /* HttpStatusCode.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		BF1EDB4D282806910065ED17 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +173,7 @@
 		BF575EAB2827A02800305612 /* Seamet */ = {
 			isa = PBXGroup;
 			children = (
+				BF1AE3412836A6D900768917 /* Enum */,
 				BF1EDB54282808230065ED17 /* Config.swift */,
 				BF1EDB4D282806910065ED17 /* Providers */,
 				BFAD3EF22827B5730045007A /* Utils */,
@@ -225,7 +236,7 @@
 				BFAD3EF32827B5820045007A /* OldHttpClient.swift */,
 				BFB3AA7A282D66C300638810 /* DatetimeUtil.swift */,
 				BFA80132282EB34400E9A178 /* ArticleTagsUtil.swift */,
-				BF1AE33B28369EA600768917 /* HttpClient.swift */,
+				BF1AE33D2836A04F00768917 /* HttpClient.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -406,8 +417,9 @@
 				BFA80133282EB34400E9A178 /* ArticleTagsUtil.swift in Sources */,
 				BF1EDB4F282806DA0065ED17 /* ArticleProvider.swift in Sources */,
 				BFA80131282EB04C00E9A178 /* ArticleDetailHeader.swift in Sources */,
+				BF1AE3432836A6EB00768917 /* HttpStatusCode.swift in Sources */,
 				BF1EDB55282808230065ED17 /* Config.swift in Sources */,
-				BF1AE33C28369EA600768917 /* HttpClient.swift in Sources */,
+				BF1AE33E2836A04F00768917 /* HttpClient.swift in Sources */,
 				BFA80137282EB74800E9A178 /* ArticleDetailView.swift in Sources */,
 				BFEDA8FE2835452A00E678A0 /* Seamet_Widget.intentdefinition in Sources */,
 				BFAD3EF42827B5820045007A /* OldHttpClient.swift in Sources */,

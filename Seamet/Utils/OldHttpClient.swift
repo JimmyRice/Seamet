@@ -13,7 +13,7 @@
 
 import Foundation
 
-enum HttpClientError: Error {
+enum OldHttpClientError: Error {
     case invalidUrl
     case createHttpRequestError
     case dataToStringError
@@ -35,7 +35,7 @@ struct OldHttpClient {
     func getString(addtionalUrl: String = "/", headers: Dictionary<String, String>? = [:]) async throws -> String {
         
         guard let url = URL(string: baseUrl + addtionalUrl) else {
-            throw HttpClientError.invalidUrl
+            throw OldHttpClientError.invalidUrl
         }
         
         var request = URLRequest(url: url)
@@ -51,15 +51,15 @@ struct OldHttpClient {
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard let response = response as? HTTPURLResponse else {
-            throw HttpClientError.invlidResponseGuaranteed
+            throw OldHttpClientError.invlidResponseGuaranteed
         }
         
         if response.statusCode != 200 {
-            throw HttpClientError.invlidServerResponse(errorStatusCode: response.statusCode)
+            throw OldHttpClientError.invlidServerResponse(errorStatusCode: response.statusCode)
         }
         
         guard let dataInString = String(data: data, encoding: .utf8) else {
-            throw HttpClientError.dataToStringError
+            throw OldHttpClientError.dataToStringError
         }
         
         return dataInString
@@ -68,11 +68,11 @@ struct OldHttpClient {
     func getJson<TJson: Codable>(addtionalUrl: String = "/", headers: Dictionary<String, String>? = [:]) async throws -> TJson {
         let dataInString = try await getString(addtionalUrl: addtionalUrl, headers: headers)
         guard let data = dataInString.data(using: .utf8) else {
-            throw HttpClientError.stringToDataError
+            throw OldHttpClientError.stringToDataError
         }
         
         guard let json = try? JSONDecoder().decode(TJson.self, from: data) else {
-            throw HttpClientError.dataDecodeError
+            throw OldHttpClientError.dataDecodeError
         }
         
         return json;
@@ -80,7 +80,7 @@ struct OldHttpClient {
     
     func postGetString(addtionalUrl: String = "/", headers: Dictionary<String, String>? = [:], dataToPost: Data) async throws -> String {
         guard let url = URL(string: baseUrl + addtionalUrl) else {
-            throw HttpClientError.invalidUrl
+            throw OldHttpClientError.invalidUrl
         }
         
         var request = URLRequest(url: url)
@@ -97,15 +97,15 @@ struct OldHttpClient {
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard let response = response as? HTTPURLResponse else {
-            throw HttpClientError.invlidResponseGuaranteed
+            throw OldHttpClientError.invlidResponseGuaranteed
         }
                     
         if response.statusCode != 200 && response.statusCode != 201 {
-            throw HttpClientError.invlidServerResponse(errorStatusCode: response.statusCode)
+            throw OldHttpClientError.invlidServerResponse(errorStatusCode: response.statusCode)
         }
         
         guard let dataInString = String(data: data, encoding: .utf8) else {
-            throw HttpClientError.dataToStringError
+            throw OldHttpClientError.dataToStringError
         }
         
         return dataInString
@@ -115,11 +115,11 @@ struct OldHttpClient {
         let dataInString = try await postGetString(addtionalUrl: addtionalUrl, headers: headers, dataToPost: dataToPost)
         
         guard let data = dataInString.data(using: .utf8) else {
-            throw HttpClientError.stringToDataError
+            throw OldHttpClientError.stringToDataError
         }
         
         guard let json = try? JSONDecoder().decode(TJson.self, from: data) else {
-            throw HttpClientError.dataDecodeError
+            throw OldHttpClientError.dataDecodeError
         }
         
         return json;

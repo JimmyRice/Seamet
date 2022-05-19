@@ -139,5 +139,4 @@ class OldHttpClientTest: XCTestCase {
             throw error
         }
     }
-
 }
