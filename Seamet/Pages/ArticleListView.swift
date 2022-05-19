@@ -10,21 +10,30 @@ import SwiftUI
 struct ArticleListView: View {
     @State var articles: [Article] = []
     @State private var isLoading: Bool = true
+    @State private var isError: Bool = false
+    @State private var searchKeyword: String = ""
     
     var body: some View {
         NavigationView {
             if !isLoading {
                 VStack {
-                    if !articles.isEmpty {
-                        List(articles, id: \.self) {article in
-                            NavigationLink {
-                                ArticleDetailView(articleId: article.id)
-                            } label: {
-                                ArticleListCell(title: article.title, dateTime: DatetimeUtil.ISO8601ToString(dateTime: article.createdDate))
+                    if !isError {
+                        if !articles.isEmpty {
+                            List(articles, id: \.self) {article in
+                                NavigationLink {
+                                    ArticleDetailView(articleId: article.id)
+                                } label: {
+                                    ArticleListCell(title: article.title, dateTime: DatetimeUtil.ISO8601ToString(dateTime: article.createdDate))
+                                }
                             }
+                            .refreshable {
+                                onAppear()
+                            }
+                        } else {
+                            Text("文章似乎为空哦...找点别的看吧")
                         }
                     } else {
-                        Text("文章似乎为空哦...找点别的看吧")
+                        Text("无法获取到文章，重启 App **或许**会有效")
                     }
                 }
                 .navigationTitle(Config.articleListViewTitle)
@@ -40,7 +49,10 @@ struct ArticleListView: View {
     func onAppear() {
         Task {
             guard let articles = try? await ArticleProvider.getArticles() else {
-                fatalError()
+                self.isError = true
+                self.isLoading = false
+                
+                return
             }
             
             self.articles = articles
