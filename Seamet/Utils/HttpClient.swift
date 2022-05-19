@@ -7,13 +7,10 @@
 
 import Foundation
 
-/**
- TODO: New HttpClient
- */
-
 enum HttpClientError: Error {
     case invlidServerResponse(statusCode: Int)
     case invlidResponseGuaranteed
+    case invlidUrl
     case failedToFetchData
     case failedToConvertData
     case failedToDecode
@@ -31,7 +28,11 @@ struct HttpClient {
         var url = self.url
         
         if let addtionalUrl = addtionalUrl {
-            url = url.appendingPathComponent(addtionalUrl)
+            guard let newUrlInString = url.appendingPathComponent(addtionalUrl).absoluteString.removingPercentEncoding else {
+                throw HttpClientError.invlidUrl
+            }
+            
+            url = URL(string: newUrlInString) ?? self.url
         }
         
         var request = URLRequest(url: url)
@@ -55,6 +56,8 @@ struct HttpClient {
         guard let response = response as? HTTPURLResponse, let status = response.status else {
             throw HttpClientError.invlidResponseGuaranteed
         }
+        
+        print(response.statusCode)
         
         if status.responseType != .success {
             throw HttpClientError.invlidServerResponse(statusCode: response.statusCode)
