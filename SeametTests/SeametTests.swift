@@ -106,64 +106,42 @@ class OldHttpClientTest: XCTestCase {
     private let httpClient = OldHttpClient(baseUrl: "https://httpbin.org")
     
     func testGetString() async throws {
-        do {
-            let response = try await httpClient.getString(addtionalUrl: "/get")
-            
-            print(response)
-            
-            XCTAssertNotNil(response)
-        } catch let error {
-            throw error
-        }
+        let response = try await httpClient.getString(addtionalUrl: "/get")
+        
+        print(response)
+        
+        XCTAssertNotNil(response)
     }
     
     func testGetJson() async throws {
-        do {
-            let response: HttpBin = try await httpClient.getJson(addtionalUrl: "/get")
-            
-            print(response)
-            
-            XCTAssertNotNil(response)
-        } catch let error {
-            print(error)
-            
-            throw error
-        }
+        let response: HttpBin = try await httpClient.getJson(addtionalUrl: "/get")
+        
+        print(response)
+        
+        XCTAssertNotNil(response)
     }
     
     func testPostGetString() async throws {
-        do {
-            let character = Character(name: "yuta", gender: "Male")
-            let headers = ["Content-Type": "application/json"]
-            let encodedCharacter = try JSONEncoder().encode(character)
-            
-            let response = try await httpClient.postGetString(addtionalUrl: "/post", headers: headers, dataToPost: encodedCharacter)
-            
-            print(response)
-            
-            XCTAssertNotNil(response)
-        } catch let error {
-            print(error)
-            
-            throw error
-        }
+        let character = Character(name: "yuta", gender: "Male")
+        let headers = ["Content-Type": "application/json"]
+        let encodedCharacter = try JSONEncoder().encode(character)
+        
+        let response = try await httpClient.postGetString(addtionalUrl: "/post", headers: headers, dataToPost: encodedCharacter)
+        
+        print(response)
+        
+        XCTAssertNotNil(response)
     }
     
     func testPostGetJson() async throws {
-        do {
-            let character = Character(name: "Yuta", gender: "Male")
-            let headers = ["Content-Type": "application/json"]
-            let encodedCharacter = try JSONEncoder().encode(character)
-            
-            let response: HttpBin = try await httpClient.postGetJson(addtionalUrl: "/post", headers: headers, dataToPost: encodedCharacter)
-            
-            print(response)
-            
-            XCTAssertNotNil(response)
-        } catch let error {
-            print(error)
-            
-            throw error
-        }
+        let character = Character(name: "Yuta", gender: "Male")
+        let headers = ["Content-Type": "application/json"]
+        let encodedCharacter = try JSONEncoder().encode(character)
+        
+        let response: HttpBin = try await httpClient.postGetJson(addtionalUrl: "/post", headers: headers, dataToPost: encodedCharacter)
+        
+        print(response)
+        
+        XCTAssertNotNil(response)
     }
 }
