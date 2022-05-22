@@ -56,9 +56,7 @@ struct HttpClient {
         guard let response = response as? HTTPURLResponse, let status = response.status else {
             throw HttpClientError.invlidResponseGuaranteed
         }
-        
-        print(response.statusCode)
-        
+                
         if status.responseType != .success {
             throw HttpClientError.invlidServerResponse(statusCode: response.statusCode)
         }
@@ -67,9 +65,7 @@ struct HttpClient {
     }
     
     func getString(addtionalUrl: String? = nil, headers: Dictionary<String, String>? = nil) async throws -> String {
-        guard let data = try? await sendRequest(addtionalUrl: addtionalUrl, method: "GET") else {
-            throw HttpClientError.failedToFetchData
-        }
+        let data = try await sendRequest(addtionalUrl: addtionalUrl, method: "GET")
                 
         guard let dataInString = String(data: data, encoding: .utf8) else {
             throw HttpClientError.failedToConvertData
@@ -79,9 +75,7 @@ struct HttpClient {
     }
     
     func getJson<TJson: Codable>(addtionalUrl: String? = nil, headers: Dictionary<String, String>? = nil) async throws -> TJson {
-        guard let data = try? await sendRequest(addtionalUrl: addtionalUrl, method: "GET") else {
-            throw HttpClientError.failedToFetchData
-        }
+        let data = try await sendRequest(addtionalUrl: addtionalUrl, method: "GET")
         
         guard let decoded = try? JSONDecoder().decode(TJson.self, from: data) else {
             throw HttpClientError.failedToDecode
