@@ -76,16 +76,12 @@ class HttpClientTest: XCTestCase {
     
     func testGetString() async throws {
         let response = try await httpClient.getString(addtionalUrl: "/items/article")
-        
-        print(response)
-        
+                
         XCTAssertNotNil(response)
     }
     
     func testGetJson() async throws {
         let response: DataEntry<[Article]> = try await httpClient.getJson(addtionalUrl: "/items/article")
-        
-        print(response.data)
         
         XCTAssertNotNil(response.data)
         XCTAssertGreaterThan(response.data.count, 1)
