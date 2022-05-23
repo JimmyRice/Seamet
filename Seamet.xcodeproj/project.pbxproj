@@ -15,6 +15,8 @@
 		BF1EDB51282806FB0065ED17 /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB50282806FB0065ED17 /* DataEntry.swift */; };
 		BF1EDB53282807300065ED17 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB52282807300065ED17 /* Article.swift */; };
 		BF1EDB55282808230065ED17 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB54282808230065ED17 /* Config.swift */; };
+		BF31685F283BCB7A00F9DFD0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB54282808230065ED17 /* Config.swift */; };
+		BF316860283BCB7B00F9DFD0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB54282808230065ED17 /* Config.swift */; };
 		BF575EAD2827A02800305612 /* SeametApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF575EAC2827A02800305612 /* SeametApp.swift */; };
 		BF575EAF2827A02800305612 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF575EAE2827A02800305612 /* ContentView.swift */; };
 		BF575EB12827A02A00305612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF575EB02827A02A00305612 /* Assets.xcassets */; };
@@ -40,7 +42,6 @@
 		BFEDA90828354E7D00E678A0 /* ArticleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB4E282806DA0065ED17 /* ArticleProvider.swift */; };
 		BFEDA90A28354E7D00E678A0 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB52282807300065ED17 /* Article.swift */; };
 		BFEDA90C28354EEC00E678A0 /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB50282806FB0065ED17 /* DataEntry.swift */; };
-		BFEDA91028354F5800E678A0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB54282808230065ED17 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,13 +174,13 @@
 			isa = PBXGroup;
 			children = (
 				BF1AE3412836A6D900768917 /* Enum */,
-				BF1EDB54282808230065ED17 /* Config.swift */,
 				BF1EDB4D282806910065ED17 /* Providers */,
 				BFAD3EF22827B5730045007A /* Utils */,
 				BF575EBC2827A2DA00305612 /* Cells */,
 				BF575EBB2827A2D600305612 /* Models */,
 				BF575EBA2827A2CA00305612 /* Pages */,
 				BF575EAC2827A02800305612 /* SeametApp.swift */,
+				BF1EDB54282808230065ED17 /* Config.swift */,
 				BF575EAE2827A02800305612 /* ContentView.swift */,
 				BF575EB22827A02A00305612 /* Preview Content */,
 			);
@@ -430,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFA8013F282EB89A00E9A178 /* SeametTests.swift in Sources */,
+				BF316860283BCB7B00F9DFD0 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,11 +442,11 @@
 				BF1AE3472836B12300768917 /* HttpStatusCode.swift in Sources */,
 				BF1AE3462836B10800768917 /* HttpClient.swift in Sources */,
 				BFEDA90A28354E7D00E678A0 /* Article.swift in Sources */,
-				BFEDA91028354F5800E678A0 /* Config.swift in Sources */,
 				BFEDA90728354E7D00E678A0 /* DatetimeUtil.swift in Sources */,
 				BFEDA8F82835452800E678A0 /* Seamet_Widget.swift in Sources */,
 				BFEDA90828354E7D00E678A0 /* ArticleProvider.swift in Sources */,
 				BFEDA8FD2835452A00E678A0 /* Seamet_Widget.intentdefinition in Sources */,
+				BF31685F283BCB7A00F9DFD0 /* Config.swift in Sources */,
 				BFEDA90C28354EEC00E678A0 /* DataEntry.swift in Sources */,
 				BFEDA90628354E7D00E678A0 /* ArticleTagsUtil.swift in Sources */,
 			);
