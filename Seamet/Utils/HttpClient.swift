@@ -65,7 +65,7 @@ struct HttpClient {
     }
     
     func getString(addtionalUrl: String? = nil, headers: Dictionary<String, String>? = nil) async throws -> String {
-        let data = try await sendRequest(addtionalUrl: addtionalUrl, method: "GET")
+        let data = try await sendRequest(addtionalUrl: addtionalUrl, method: "GET", headers: headers)
                 
         guard let dataInString = String(data: data, encoding: .utf8) else {
             throw HttpClientError.failedToConvertData
@@ -75,7 +75,7 @@ struct HttpClient {
     }
     
     func getJson<TJson: Codable>(addtionalUrl: String? = nil, headers: Dictionary<String, String>? = nil) async throws -> TJson {
-        let data = try await sendRequest(addtionalUrl: addtionalUrl, method: "GET")
+        let data = try await sendRequest(addtionalUrl: addtionalUrl, method: "GET", headers: headers)
         
         guard let decoded = try? JSONDecoder().decode(TJson.self, from: data) else {
             throw HttpClientError.failedToDecode
