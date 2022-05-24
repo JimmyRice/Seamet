@@ -103,6 +103,7 @@
 		BFEDA8F92835452800E678A0 /* Seamet_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Seamet_Widget.intentdefinition; sourceTree = "<group>"; };
 		BFEDA8FA2835452A00E678A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFEDA8FC2835452A00E678A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFF8002E283CF0370086B0E4 /* CODEOWNERS */ = {isa = PBXFileReference; lastKnownFileType = text; path = CODEOWNERS; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +153,7 @@
 		BF575EA02827A02800305612 = {
 			isa = PBXGroup;
 			children = (
+				BFF8002E283CF0370086B0E4 /* CODEOWNERS */,
 				BF575EAB2827A02800305612 /* Seamet */,
 				BFA8013D282EB89A00E9A178 /* SeametTests */,
 				BFEDA8F62835452800E678A0 /* Seamet Widget */,
