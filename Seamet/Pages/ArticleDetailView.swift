@@ -22,9 +22,7 @@ struct ArticleDetailView: View {
                 }
             } else {
                 ProgressView()
-                    .onAppear {
-                        onAppear()
-                    }
+                    .onAppear(perform: fetchData)
             }
         }
         .padding(.vertical, 0)
@@ -32,7 +30,7 @@ struct ArticleDetailView: View {
         .padding(.top, 0)
     }
     
-    func onAppear() {
+    func fetchData() {
         Task {
             guard let article = try? await ArticleProvider.getArticle(id: articleId) else {
                 fatalError()

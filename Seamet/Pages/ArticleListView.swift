@@ -26,9 +26,7 @@ struct ArticleListView: View {
                                     ArticleListCell(title: article.title, dateTime: DatetimeUtil.ISO8601ToString(dateTime: article.createdDate))
                                 }
                             }
-                            .refreshable {
-                                onAppear()
-                            }
+                            .refreshable(action: fetchData)
                         } else {
                             Text("文章似乎为空哦...找点别的看吧")
                         }
@@ -39,14 +37,12 @@ struct ArticleListView: View {
                 .navigationTitle(Config.articleListViewTitle)
             } else {
                 ProgressView("加载中...")
-                    .onAppear {
-                        onAppear()
-                    }
+                    .onAppear(perform: fetchData)
             }
         }
     }
     
-    func onAppear() {
+    @Sendable func fetchData() {
         Task {
             guard let articles = try? await ArticleProvider.getArticles() else {
                 self.isError = true
