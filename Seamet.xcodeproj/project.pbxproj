@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF063590283F714D008F9313 /* MarkdownView in Frameworks */ = {isa = PBXBuildFile; productRef = BF06358F283F714D008F9313 /* MarkdownView */; };
 		BF1AE33E2836A04F00768917 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AE33D2836A04F00768917 /* HttpClient.swift */; };
 		BF1AE3432836A6EB00768917 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AE3422836A6EB00768917 /* HttpStatusCode.swift */; };
 		BF1AE3462836B10800768917 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AE33D2836A04F00768917 /* HttpClient.swift */; };
@@ -29,6 +30,23 @@
 		BFAD3EF12827B5580045007A /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD3EF02827B5580045007A /* ArticleListView.swift */; };
 		BFB3AA79282D618600638810 /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3AA78282D618600638810 /* ArticleListCell.swift */; };
 		BFB3AA7B282D66C300638810 /* DatetimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3AA7A282D66C300638810 /* DatetimeUtil.swift */; };
+		BFBC5741283F6F2500D033CF /* Seamet_clipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC5740283F6F2500D033CF /* Seamet_clipApp.swift */; };
+		BFBC5743283F6F2500D033CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC5742283F6F2500D033CF /* ContentView.swift */; };
+		BFBC5745283F6F2800D033CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBC5744283F6F2800D033CF /* Assets.xcassets */; };
+		BFBC5748283F6F2800D033CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBC5747283F6F2800D033CF /* Preview Assets.xcassets */; };
+		BFBC574D283F6F2800D033CF /* Seamet clip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = BFBC573E283F6F2500D033CF /* Seamet clip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BFBC5752283F6F6400D033CF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB52282807300065ED17 /* Article.swift */; };
+		BFBC5753283F6F6400D033CF /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA80136282EB74800E9A178 /* ArticleDetailView.swift */; };
+		BFBC5754283F6F6400D033CF /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD3EF02827B5580045007A /* ArticleListView.swift */; };
+		BFBC5755283F6F6400D033CF /* ArticleTagsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA80132282EB34400E9A178 /* ArticleTagsUtil.swift */; };
+		BFBC5756283F6F6400D033CF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB54282808230065ED17 /* Config.swift */; };
+		BFBC5757283F6F6400D033CF /* ArticleDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA80130282EB04C00E9A178 /* ArticleDetailHeader.swift */; };
+		BFBC5758283F6F6400D033CF /* DatetimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3AA7A282D66C300638810 /* DatetimeUtil.swift */; };
+		BFBC5759283F6F6400D033CF /* ArticleDetailBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA80134282EB58700E9A178 /* ArticleDetailBody.swift */; };
+		BFBC575A283F6F6400D033CF /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EDB50282806FB0065ED17 /* DataEntry.swift */; };
+		BFBC575B283F6F6400D033CF /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3AA78282D618600638810 /* ArticleListCell.swift */; };
+		BFBC575C283F6F6400D033CF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AE33D2836A04F00768917 /* HttpClient.swift */; };
+		BFBC575D283F6F6400D033CF /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AE3422836A6EB00768917 /* HttpStatusCode.swift */; };
 		BFEDA8F32835452800E678A0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEDA8F22835452800E678A0 /* WidgetKit.framework */; };
 		BFEDA8F52835452800E678A0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEDA8F42835452800E678A0 /* SwiftUI.framework */; };
 		BFEDA8F82835452800E678A0 /* Seamet_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDA8F72835452800E678A0 /* Seamet_Widget.swift */; };
@@ -50,6 +68,13 @@
 			remoteGlobalIDString = BF575EA82827A02800305612;
 			remoteInfo = Seamet;
 		};
+		BFBC574B283F6F2800D033CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF575EA12827A02800305612 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFBC573D283F6F2500D033CF;
+			remoteInfo = "Seamet clip";
+		};
 		BFEDA8FF2835452A00E678A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BF575EA12827A02800305612 /* Project object */;
@@ -60,6 +85,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		BFBC5751283F6F2800D033CF /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				BFBC574D283F6F2800D033CF /* Seamet clip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFEDA9022835452A00E678A0 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,6 +129,13 @@
 		BFAD3EF02827B5580045007A /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		BFB3AA78282D618600638810 /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
 		BFB3AA7A282D66C300638810 /* DatetimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatetimeUtil.swift; sourceTree = "<group>"; };
+		BFBC573E283F6F2500D033CF /* Seamet clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seamet clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFBC5740283F6F2500D033CF /* Seamet_clipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seamet_clipApp.swift; sourceTree = "<group>"; };
+		BFBC5742283F6F2500D033CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BFBC5744283F6F2800D033CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFBC5747283F6F2800D033CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BFBC5749283F6F2800D033CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFBC574A283F6F2800D033CF /* Seamet_clip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Seamet_clip.entitlements; sourceTree = "<group>"; };
 		BFEDA8F02835452800E678A0 /* Seamet WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Seamet WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEDA8F22835452800E678A0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		BFEDA8F42835452800E678A0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -116,6 +159,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFBC573B283F6F2500D033CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF063590283F714D008F9313 /* MarkdownView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +197,7 @@
 				BF575EAB2827A02800305612 /* Seamet */,
 				BFA8013D282EB89A00E9A178 /* SeametTests */,
 				BFEDA8F62835452800E678A0 /* Seamet Widget */,
+				BFBC573F283F6F2500D033CF /* Seamet clip */,
 				BFEDA8F12835452800E678A0 /* Frameworks */,
 				BF575EAA2827A02800305612 /* Products */,
 			);
@@ -157,6 +209,7 @@
 				BF575EA92827A02800305612 /* Seamet.app */,
 				BFA8013C282EB89A00E9A178 /* SeametTests.xctest */,
 				BFEDA8F02835452800E678A0 /* Seamet WidgetExtension.appex */,
+				BFBC573E283F6F2500D033CF /* Seamet clip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +293,27 @@
 			path = Article;
 			sourceTree = "<group>";
 		};
+		BFBC573F283F6F2500D033CF /* Seamet clip */ = {
+			isa = PBXGroup;
+			children = (
+				BFBC5740283F6F2500D033CF /* Seamet_clipApp.swift */,
+				BFBC5742283F6F2500D033CF /* ContentView.swift */,
+				BFBC5744283F6F2800D033CF /* Assets.xcassets */,
+				BFBC5749283F6F2800D033CF /* Info.plist */,
+				BFBC574A283F6F2800D033CF /* Seamet_clip.entitlements */,
+				BFBC5746283F6F2800D033CF /* Preview Content */,
+			);
+			path = "Seamet clip";
+			sourceTree = "<group>";
+		};
+		BFBC5746283F6F2800D033CF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BFBC5747283F6F2800D033CF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		BFEDA8F12835452800E678A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,11 +345,13 @@
 				BF575EA62827A02800305612 /* Frameworks */,
 				BF575EA72827A02800305612 /* Resources */,
 				BFEDA9022835452A00E678A0 /* Embed App Extensions */,
+				BFBC5751283F6F2800D033CF /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				BFEDA9002835452A00E678A0 /* PBXTargetDependency */,
+				BFBC574C283F6F2800D033CF /* PBXTargetDependency */,
 			);
 			name = Seamet;
 			packageProductDependencies = (
@@ -302,6 +378,26 @@
 			productName = SeametTests;
 			productReference = BFA8013C282EB89A00E9A178 /* SeametTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BFBC573D283F6F2500D033CF /* Seamet clip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFBC574E283F6F2800D033CF /* Build configuration list for PBXNativeTarget "Seamet clip" */;
+			buildPhases = (
+				BFBC573A283F6F2500D033CF /* Sources */,
+				BFBC573B283F6F2500D033CF /* Frameworks */,
+				BFBC573C283F6F2500D033CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Seamet clip";
+			packageProductDependencies = (
+				BF06358F283F714D008F9313 /* MarkdownView */,
+			);
+			productName = "Seamet clip";
+			productReference = BFBC573E283F6F2500D033CF /* Seamet clip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
 		};
 		BFEDA8EF2835452800E678A0 /* Seamet WidgetExtension */ = {
 			isa = PBXNativeTarget;
@@ -337,6 +433,9 @@
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = BF575EA82827A02800305612;
 					};
+					BFBC573D283F6F2500D033CF = {
+						CreatedOnToolsVersion = 13.4;
+					};
 					BFEDA8EF2835452800E678A0 = {
 						CreatedOnToolsVersion = 13.4;
 					};
@@ -361,6 +460,7 @@
 				BF575EA82827A02800305612 /* Seamet */,
 				BFA8013B282EB89A00E9A178 /* SeametTests */,
 				BFEDA8EF2835452800E678A0 /* Seamet WidgetExtension */,
+				BFBC573D283F6F2500D033CF /* Seamet clip */,
 			);
 		};
 /* End PBXProject section */
@@ -379,6 +479,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFBC573C283F6F2500D033CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFBC5748283F6F2800D033CF /* Preview Assets.xcassets in Resources */,
+				BFBC5745283F6F2800D033CF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +533,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFBC573A283F6F2500D033CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFBC5753283F6F6400D033CF /* ArticleDetailView.swift in Sources */,
+				BFBC5759283F6F6400D033CF /* ArticleDetailBody.swift in Sources */,
+				BFBC5754283F6F6400D033CF /* ArticleListView.swift in Sources */,
+				BFBC5743283F6F2500D033CF /* ContentView.swift in Sources */,
+				BFBC575B283F6F6400D033CF /* ArticleListCell.swift in Sources */,
+				BFBC575A283F6F6400D033CF /* DataEntry.swift in Sources */,
+				BFBC575D283F6F6400D033CF /* HttpStatusCode.swift in Sources */,
+				BFBC5756283F6F6400D033CF /* Config.swift in Sources */,
+				BFBC575C283F6F6400D033CF /* HttpClient.swift in Sources */,
+				BFBC5757283F6F6400D033CF /* ArticleDetailHeader.swift in Sources */,
+				BFBC5758283F6F6400D033CF /* DatetimeUtil.swift in Sources */,
+				BFBC5741283F6F2500D033CF /* Seamet_clipApp.swift in Sources */,
+				BFBC5752283F6F6400D033CF /* Article.swift in Sources */,
+				BFBC5755283F6F6400D033CF /* ArticleTagsUtil.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFEDA8EC2835452800E678A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -447,6 +577,11 @@
 			isa = PBXTargetDependency;
 			target = BF575EA82827A02800305612 /* Seamet */;
 			targetProxy = BFA80140282EB89A00E9A178 /* PBXContainerItemProxy */;
+		};
+		BFBC574C283F6F2800D033CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFBC573D283F6F2500D033CF /* Seamet clip */;
+			targetProxy = BFBC574B283F6F2800D033CF /* PBXContainerItemProxy */;
 		};
 		BFEDA9002835452A00E678A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -666,6 +801,72 @@
 			};
 			name = Release;
 		};
+		BFBC574F283F6F2800D033CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Seamet clip/Seamet_clip.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Seamet clip/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Seamet clip/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Seamet;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jimmy0w0.Seamet.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFBC5750283F6F2800D033CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Seamet clip/Seamet_clip.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Seamet clip/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Seamet clip/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Seamet;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Jimmy0w0.Seamet.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		BFEDA9032835452A00E678A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -752,6 +953,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		BFBC574E283F6F2800D033CF /* Build configuration list for PBXNativeTarget "Seamet clip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFBC574F283F6F2800D033CF /* Debug */,
+				BFBC5750283F6F2800D033CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BFEDA9052835452A00E678A0 /* Build configuration list for PBXNativeTarget "Seamet WidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -775,6 +985,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF06358F283F714D008F9313 /* MarkdownView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF575EBD2827B3FD00305612 /* XCRemoteSwiftPackageReference "MarkdownView" */;
+			productName = MarkdownView;
+		};
 		BF575EBE2827B3FD00305612 /* MarkdownView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF575EBD2827B3FD00305612 /* XCRemoteSwiftPackageReference "MarkdownView" */;
