@@ -10,14 +10,14 @@ import SwiftUI
 struct ArticleListView: View {
     @State var articles: [Article] = []
     @State private var isLoading: Bool = true
-    @State private var isError: Bool = false
+    @State private var isFailed: Bool = false
     @State private var searchKeyword: String = ""
     
     var body: some View {
         NavigationView {
             if !isLoading {
                 VStack {
-                    if !isError {
+                    if !isFailed {
                         if !articles.isEmpty {
                             List(articles, id: \.self) {article in
                                 NavigationLink {
@@ -45,7 +45,7 @@ struct ArticleListView: View {
     @Sendable func fetchData() {
         Task {
             guard let articles = try? await Article.getArticles() else {
-                self.isError = true
+                self.isFailed = true
                 self.isLoading = false
                 
                 return
