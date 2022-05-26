@@ -32,7 +32,7 @@ struct ArticleDetailView: View {
     
     func fetchData() {
         Task {
-            guard let article = try? await ArticleProvider.getArticle(id: articleId) else {
+            guard let article = try? await Article.getArticle(for: articleId) else {
                 fatalError()
             }
             

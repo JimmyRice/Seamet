@@ -17,21 +17,28 @@ class ProviderTests: XCTestCase {
         
     }
     
-    func testArticleProvider() async throws {
-        let articles = try await ArticleProvider.getArticles()
+    func testGetAllArticlesProvider() async throws {
+        let articles = try await Article.getArticles()
         
         print(articles)
         
-        XCTAssertGreaterThan(articles.count, 1)
+        XCTAssertNotNil(articles)
     }
     
-    func testRecentArticleProvider() async throws {
-        let recentArticle = try await ArticleProvider.getRecentArticle()
+    func testGetRecentArticleProvider() async throws {
+        let recentArticle = try await Article.getRecentArticle()
         
         print(recentArticle)
                     
         XCTAssertNotNil(recentArticle)
-        XCTAssertNotNil(recentArticle.title)
+    }
+    
+    func testGetArticleProvider() async throws {
+        let article = try await Article.getArticle(for: 1)
+        
+        print(article)
+        
+        XCTAssertNotNil(article)
     }
 }
 

@@ -44,7 +44,7 @@ struct ArticleListView: View {
     
     @Sendable func fetchData() {
         Task {
-            guard let articles = try? await ArticleProvider.getArticles() else {
+            guard let articles = try? await Article.getArticles() else {
                 self.isError = true
                 self.isLoading = false
                 
