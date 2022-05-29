@@ -23,7 +23,7 @@ struct ArticleDetailView: View {
                             .padding(.top, 0)
                     }
                 } else {
-                    Text("无法获取到文章，回退后再次进入 **或许** 会有效")
+                    Text(NSLocalizedString("ArticleDetailViewFailedToFetchArticle", comment: ""))
                 }
             } else {
                 ProgressView()

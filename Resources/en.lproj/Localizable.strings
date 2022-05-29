@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Seamet
+
+  Created by Jimmy on 5/29/22.
+  
+*/
+
+"Loading" = "Loading";
+"ArticleLable" = "Article";
+"ArticleListViewNavigationTitle" = "Articles";
+"ArticleListViewArticleIsEmpty" = "Article list is empty";
+"ArticleListViewFailedToFetchArticle" = "Can't get the article, restart the App maybe it will work";
+"ArticleDetailViewFailedToFetchArticle" = "Can't get the article, restart the App maybe it will work";

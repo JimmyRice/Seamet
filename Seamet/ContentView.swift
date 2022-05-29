@@ -12,7 +12,7 @@ struct ContentView: View {
         TabView {
             ArticleListView()
                 .tabItem {
-                    Label("文章", systemImage: "newspaper")
+                    Label(NSLocalizedString("ArticleLable", comment: ""), systemImage: "newspaper")
                 }
         }
     }

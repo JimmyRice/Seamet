@@ -9,6 +9,4 @@ import Foundation
 
 struct Config {
     static let baseUrl: String = "https://t3tmqp0w.directus.app"
-    
-    static let articleListViewTitle: String = "文章"
 }

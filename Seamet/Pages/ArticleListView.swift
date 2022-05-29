@@ -28,15 +28,15 @@ struct ArticleListView: View {
                             }
                             .refreshable(action: fetchData)
                         } else {
-                            Text("文章似乎为空哦...找点别的看吧")
+                            Text(NSLocalizedString("ArticleListViewArticleIsEmpty", comment: ""))
                         }
                     } else {
-                        Text("无法获取到文章，重启 App **或许**会有效")
+                        Text(NSLocalizedString("ArticleListViewFailedToFetchArticle", comment: ""))
                     }
                 }
-                .navigationTitle(Config.articleListViewTitle)
+                .navigationTitle(NSLocalizedString("ArticleListViewNavigationTitle", comment: ""))
             } else {
-                ProgressView("加载中...")
+                ProgressView(NSLocalizedString("Loading", comment: ""))
                     .onAppear(perform: fetchData)
             }
         }
